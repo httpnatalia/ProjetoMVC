@@ -1,0 +1,52 @@
+﻿<div class="text-left">
+    <div>
+        <h1> Dados dos Alunos </h1>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Cód</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Contato</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Cep</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Maria</td>
+                <td>21</td>
+                <td>(12)1212-1212</td>
+                <td>maria@gmail.com</td>
+                <td>880088-00</td>
+                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>João</td>
+                <td>22</td>
+                <td>(13)1313-1313</td>
+                <td>joao@gmail.com</td>
+                <td>880088-11</td>
+                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Ana</td>
+                <td>20</td>
+                <td>(14)1414-1414</td>
+                <td>ana@gmail.com</td>
+                <td>880088-22</td>
+                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
+
+
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-grid gap-10 col-4 mx-auto">
+        <a class="btn btn-outline-primary" type="button" asp-controller="Alunos" asp-action="Adicionar">Adicionar Novo Aluno</a>
+    </div>
+</div>
