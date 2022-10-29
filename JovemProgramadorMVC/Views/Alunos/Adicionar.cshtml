@@ -1,23 +1,25 @@
 ﻿<main>
     <form>
         <label for="nomealunos">Nome</label> <br />
-        <input type="text" id="nomealunos" class="input-padrao" required> <br />
+        <input type="text" id="nomealunos" class="col-5" required> <br />
 
         <label for="idade">Idade</label> <br />
-        <input type="text" id="idade" class="input-padrao" required> <br />
+        <input type="text" id="idade" class="col-1" required> <br />
+
+        <label for="telefone"> Contato</label> <br />
+        <input type="tel" id="telefone"  class="col-3" required placeholder="(00)11111-1111"> <br />
 
         <label for="email">Email</label> <br />
-        <input type="email" id="email" class="input-padrao" required placeholder="seunome@dominio.com"> <br />
-
-        <label for="telefone"> telefone</label> <br />
-        <input type="tel" id="telefone" class="input-padrao" required placeholder="(00)00000-0000"> <br />
+        <input type="email" id="email"  class="col-3" required placeholder="seunome@dominio.com"> <br />
 
         <label for="mensagem">CEP</label> <br />
-        <input type="text" id="endereco-cep" class="input-padrao" required placeholder="000000-00"> <br /> <br />
-
-        <input type="submit" value="Enviar formulário" class="enviar"> <br />
+        <input type="text" id="endereco-cep"  class="col-3" required placeholder="000000-00"> <br /> <br />
 
     </form>
 
+    <div class="d-grid gap-10 col-4 mx-auto">
+        <button type="button" class="btn btn-outline-primary">Adicionar</button>
+        <button type="button" class="btn btn-outline-primary">Voltar</button>
+    </div>
 
 </main>
