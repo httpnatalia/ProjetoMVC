@@ -1,24 +1,26 @@
-﻿<main>
-    <form>
+﻿@model AlunoModel
+
+<main>
+    <form asp-controller="Alunos" asp-action="InserirAluno" method="post">
         <label for="nomealunos">Nome</label> <br />
-        <input type="text" id="nomealunos" class="col-5" required> <br />
+        <input type="text" asp-for="Nome" id="nomealunos" class="col-5" required> <br />
 
         <label for="idade">Idade</label> <br />
-        <input type="text" id="idade" class="col-1" required> <br />
+        <input type="text" asp-for="Idade" id="idade" class="col-1" required> <br />
 
         <label for="telefone"> Contato</label> <br />
-        <input type="tel" id="telefone"  class="col-3" required placeholder="(00)11111-1111"> <br />
+        <input type="tel" asp-for="Contato" id="telefone"  class="col-3" required placeholder="(00)11111-1111"> <br />
 
         <label for="email">Email</label> <br />
-        <input type="email" id="email"  class="col-3" required placeholder="seunome@dominio.com"> <br />
+        <input type="email" asp-for="Email" id="email"  class="col-3" required placeholder="seunome@dominio.com"> <br />
 
         <label for="mensagem">CEP</label> <br />
-        <input type="text" id="endereco-cep"  class="col-3" required placeholder="000000-00"> <br /> <br />
+        <input type="text" asp-for="Cep" id="endereco-cep"  class="col-3" required placeholder="000000-00"> <br /> <br />
 
     </form>
 
     <div class="d-grid gap-10 col-4 mx-auto">
-        <button type="button" class="btn btn-outline-primary">Adicionar</button>
+        <button type="submit" class="btn btn-outline-primary">Adicionar</button>
         <button type="button" class="btn btn-outline-primary">Voltar</button>
     </div>
 

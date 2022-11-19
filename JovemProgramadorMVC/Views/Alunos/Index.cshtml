@@ -1,4 +1,5 @@
-﻿<div class="text-left">
+﻿@model List<AlunoModel>
+<div class="text-left">
     <div>
         <h1> Dados dos Alunos </h1>
     </div>
@@ -15,35 +16,26 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Maria</td>
-                <td>21</td>
-                <td>(12)1212-1212</td>
-                <td>maria@gmail.com</td>
-                <td>880088-00</td>
-                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>João</td>
-                <td>22</td>
-                <td>(13)1313-1313</td>
-                <td>joao@gmail.com</td>
-                <td>880088-11</td>
-                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Ana</td>
-                <td>20</td>
-                <td>(14)1414-1414</td>
-                <td>ana@gmail.com</td>
-                <td>880088-22</td>
-                <td><button type="button" class="btn btn-outline-primary">Endereço</button></td>
-
-
-            </tr>
+            @if (Model != null && Model.Any())
+            {
+                foreach (AlunoModel aluno in Model)
+                {
+                    <tr>
+                        <td>@aluno.Nome</td>
+                        <td>@aluno.Idade</td>
+                        <td>@aluno.Contato</td>
+                        <td>@aluno.Email</td>
+                        <td>@aluno.Cep</td>
+                        <td>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereco</a>
+                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Editar" asp-route-id="@aluno.Id">Editar</a>
+                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Excluir" asp-route-id="@aluno.Id">Excluir</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
         </tbody>
     </table>
     <div class="d-grid gap-10 col-4 mx-auto">

@@ -10,7 +10,7 @@ namespace JovemProgramadorMVC.Data
 {
     public class JovemProgramadorContexto : DbContext
     {
-        public JovemProgramadorContexto(DbContextOptions<JovemProgramadorContexto> options)
+        public JovemProgramadorContexto(DbContextOptions<JovemProgramadorContexto> options): base(options)
         {
 
         }
