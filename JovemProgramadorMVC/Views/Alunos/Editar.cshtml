@@ -1,8 +1,9 @@
 ﻿@model AlunoModel
 
 
-<form asp-controller="Alunos" asp-action="InserirAluno" method="post">
-  
+<form asp-controller="Alunos" asp-action="Editar" method="post">
+    <input type="hidden" asp-for="Id"/>
+
     <label for="nomealunos">Nome</label> <br />
     <input type="text" asp-for="Nome" id="nomealunos" class="col-5" required> <br />
 
@@ -15,14 +16,12 @@
     <label for="email">Email</label> <br />
     <input type="email" asp-for="Email" id="email" class="col-3" required placeholder="seunome@dominio.com"> <br />
 
-    <label for="mensagem">CEP</label> <br />
+    <label for="cep">CEP</label> <br />
     <input type="text" asp-for="Cep" id="endereco-cep" class="col-3" required placeholder="000000-00"> <br /> <br />
 
     <div class="d-grid gap-10 col-4 mx-auto">
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+        <button type="submit" class="btn btn-primary">Alterar</button>
         <a class="btn btn-primary"  asp-action="Index" asp-controller="Alunos" role="button" >Voltar</a>
+        
     </div>
 </form>
-
-
-

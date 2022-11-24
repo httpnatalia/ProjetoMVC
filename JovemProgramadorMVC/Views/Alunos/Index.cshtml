@@ -1,44 +1,46 @@
-﻿@model List<AlunoModel>
-<div class="text-left">
-    <div>
-        <h1> Dados dos Alunos </h1>
-    </div>
+﻿
+ @model List<AlunoModel>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Cód</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Idade</th>
-                <th scope="col">Contato</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Cep</th>
-            </tr>
-        </thead>
-        <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (AlunoModel aluno in Model)
-                {
+        <div class="text-left">
+
+            <div>
+                <h1> Dados dos Alunos </h1>
+            </div>
+
+            <table class="table">
+                <thead>
                     <tr>
-                        <td>@aluno.Nome</td>
-                        <td>@aluno.Idade</td>
-                        <td>@aluno.Contato</td>
-                        <td>@aluno.Email</td>
-                        <td>@aluno.Cep</td>
-                        <td>
-                            <div class="d-grid gap-2 d-md-block">
-                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereco</a>
-                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Editar" asp-route-id="@aluno.Id">Editar</a>
-                                <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Excluir" asp-route-id="@aluno.Id">Excluir</a>
-                            </div>
-                        </td>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Idade</th>
+                        <th scope="col">Contato</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Cep</th>
                     </tr>
-                }
-            }
-        </tbody>
-    </table>
-    <div class="d-grid gap-10 col-4 mx-auto">
-        <a class="btn btn-outline-primary" type="button" asp-controller="Alunos" asp-action="Adicionar">Adicionar Novo Aluno</a>
-    </div>
-</div>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Any())
+                    {
+                        foreach (AlunoModel aluno in Model)
+                        {
+                            <tr>
+                                <td>@aluno.Nome</td>
+                                <td>@aluno.Idade</td>
+                                <td>@aluno.Contato</td>
+                                <td>@aluno.Email</td>
+                                <td>@aluno.Cep</td>
+                                <td>
+                                    <div class="d-grid gap-2 d-md-block">
+                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereco</a>
+                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Editar" asp-route-id="@aluno.Id">Editar</a>
+                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Excluir" asp-route-id="@aluno.Id">Excluir</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+            <div class="d-grid gap-10 col-4 mx-auto">
+                <a class="btn btn-outline-primary" type="button" asp-controller="Alunos" asp-action="Adicionar">Adicionar Novo Aluno</a>
+            </div>
+        </div>
