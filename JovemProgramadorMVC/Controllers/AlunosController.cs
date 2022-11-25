@@ -31,8 +31,21 @@ namespace JovemProgramadorMVC.Controllers
         }
         public IActionResult InserirAluno(AlunoModel alunos)
         {
-            _alunoRepositorio.InserirAluno(alunos);
-            return RedirectToAction("Index");
+            try
+            {
+                _alunoRepositorio.InserirAluno(alunos);
+
+                TempData["MensagemAlunoAdicionado"] = "Aluno adicionado com sucesso!";
+
+                return RedirectToAction("Index");
+
+            }
+            catch (Exception)
+            {
+
+                throw new SystemException ("Houve um erro na inserção do contato.");
+            }
+            
         }
 
         public IActionResult Editar(int Id)
@@ -43,6 +56,9 @@ namespace JovemProgramadorMVC.Controllers
         public IActionResult Atualizar(AlunoModel alunos)
         {
             _alunoRepositorio.Atualizar(alunos);
+
+            TempData["MensagemAlunoAtualizado"] = "Aluno atualizado com sucesso!";
+
             return RedirectToAction("Index");
         }
 
@@ -54,6 +70,7 @@ namespace JovemProgramadorMVC.Controllers
         public IActionResult Apagar(int Id)
         {
             _alunoRepositorio.Apagar(Id);
+            TempData["MensagemAlunoApagado"] = "Aluno apagado com sucesso!";
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> BuscarEndereco(string cep) 

@@ -1,8 +1,9 @@
-﻿@model AlunoModel
+﻿
+@model AlunoModel
 
 
 <form asp-controller="Alunos" asp-action="Atualizar" method="post">
-    <input type="hidden" asp-for="Id"/>
+    <input type="hidden" asp-for="Id" />
 
     <label for="nomealunos">Nome</label> <br />
     <input type="text" asp-for="Nome" id="nomealunos" class="col-5" required> <br />
@@ -21,7 +22,7 @@
 
     <div class="d-grid gap-10 col-4 mx-auto">
         <button type="submit" class="btn btn-primary">Alterar</button>
-        <a class="btn btn-primary"  asp-action="Index" asp-controller="Alunos" role="button" >Voltar</a>
-        
+        <a class="btn btn-primary" asp-action="Index" asp-controller="Alunos" role="button">Voltar</a>
+
     </div>
 </form>
