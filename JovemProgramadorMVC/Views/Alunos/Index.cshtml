@@ -30,9 +30,9 @@
                                 <td>@aluno.Cep</td>
                                 <td>
                                     <div class="d-grid gap-2 d-md-block">
-                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereco</a>
+                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="BuscarEndereco" asp-route-cep="@aluno.Cep">Endereço</a>
                                         <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Editar" asp-route-id="@aluno.Id">Editar</a>
-                                        <a type="submit" class="btn btn-primary" role="button" asp-controller="Alunos" asp-action="Excluir" asp-route-id="@aluno.Id">Excluir</a>
+                                        <a type="submit" class="btn btn-danger" role="button" asp-controller="Alunos" asp-action="ApagarConfirmacao" asp-route-id="@aluno.Id">Excluir</a>
                                     </div>
                                 </td>
                             </tr>

@@ -6,7 +6,7 @@ using System.Linq;
 namespace JovemProgramadorMVC.Data.Repositorio
 {
 
-    public class AlunoRepositorio: IAlunoRepositorio
+    public class AlunoRepositorio : IAlunoRepositorio
     {
         private readonly JovemProgramadorContexto _jovemProgramadorContexto;
         public AlunoRepositorio(JovemProgramadorContexto jovemProgramadorContexto)
@@ -41,11 +41,20 @@ namespace JovemProgramadorMVC.Data.Repositorio
 
             _jovemProgramadorContexto.Aluno.Update(AlunoDB);
             _jovemProgramadorContexto.SaveChanges();
-            
             return AlunoDB;
 
+        }
 
+        public bool Apagar(int Id)
+        {
+            AlunoModel AlunoDB = BuscarId(Id);
 
+            if (AlunoDB == null) throw new System.Exception("Houve um erro na deleção do contato!");
+
+            _jovemProgramadorContexto.Aluno.Remove(AlunoDB);
+            _jovemProgramadorContexto.SaveChanges();
+
+            return true;
         }
     }
 }

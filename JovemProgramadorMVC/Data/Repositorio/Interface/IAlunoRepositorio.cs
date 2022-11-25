@@ -10,9 +10,10 @@ namespace JovemProgramadorMVC.Data.Repositorio.Interface
     {
         void InserirAluno(AlunoModel alunos);
         List<AlunoModel> BuscarAlunos();
-        AlunoModel BuscarId(int Id);
+        AlunoModel BuscarId(int Id); 
         AlunoModel Atualizar(AlunoModel alunos);
+        bool Apagar(int Id);
 
-        
+
     }
 }
