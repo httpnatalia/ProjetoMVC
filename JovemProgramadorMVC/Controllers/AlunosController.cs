@@ -22,8 +22,19 @@ namespace JovemProgramadorMVC.Controllers
         }
         public IActionResult Index()
         {
-            var alunos = _alunoRepositorio.BuscarAlunos().ToList();
-            return View(alunos);
+            try
+            {
+                var alunos = _alunoRepositorio.BuscarAlunos().ToList();
+                return View(alunos);
+            }
+            catch (Exception)
+            {
+
+                TempData["MensagemErro"] = "Erro na conexão com banco de dados.";
+
+                return View("Index");
+            }
+           
         }
         public IActionResult Adicionar()
         {
