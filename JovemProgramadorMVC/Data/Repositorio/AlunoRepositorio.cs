@@ -31,7 +31,7 @@ namespace JovemProgramadorMVC.Data.Repositorio
         public AlunoModel Atualizar(AlunoModel alunos)
         {
             AlunoModel AlunoDB = BuscarId(alunos.Id);
-            if (AlunoDB == null) throw new System.Exception("Houve um erro na atualização do contato.");
+            
 
             AlunoDB.Nome = alunos.Nome;
             AlunoDB.Idade = alunos.Idade;
@@ -49,7 +49,7 @@ namespace JovemProgramadorMVC.Data.Repositorio
         {
             AlunoModel AlunoDB = BuscarId(Id);
 
-            if (AlunoDB == null) throw new System.Exception("Houve um erro na deleção do contato!");
+         
 
             _jovemProgramadorContexto.Aluno.Remove(AlunoDB);
             _jovemProgramadorContexto.SaveChanges();

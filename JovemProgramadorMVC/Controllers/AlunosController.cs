@@ -43,7 +43,9 @@ namespace JovemProgramadorMVC.Controllers
             catch (Exception)
             {
 
-                throw new SystemException ("Houve um erro na inserção do contato.");
+                TempData["MensagemErro"] = "Erro na conexão com banco de dados.";
+
+                return View("Index");
             }
             
         }
